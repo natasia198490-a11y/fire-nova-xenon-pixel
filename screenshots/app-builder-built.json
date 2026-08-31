@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Стол находок",
+      "hasCanvas": false,
+      "bodyTextLen": 1081,
+      "bodyTextHash": "54d6eb03955b28a297b8ae254700fb9887e927e17593407c39234c303da6b0d3",
+      "bodyTextPrefix": "КАБИНЕТ МЕЖДУ МИРАМИ Стол находок Искать Заблудиться Свод Миры о",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Стол находок",
+      "hasCanvas": false,
+      "bodyTextLen": 1057,
+      "bodyTextHash": "e75ab753b33dbfb1c96b4910644a8d175aac81f3e4ece3b8ab7c84bd20dab8bc",
+      "bodyTextPrefix": "КАБИНЕТ МЕЖДУ МИРАМИ Стол находок Миры оставляют здесь то, что н",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

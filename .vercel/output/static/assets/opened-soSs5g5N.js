@@ -1,0 +1,1 @@
+var e=`desk-opened-finds`;function t(){if(typeof window>`u`)return[];try{let t=window.localStorage.getItem(e);if(!t)return[];let n=JSON.parse(t);return Array.isArray(n)?n.filter(e=>typeof e==`string`):[]}catch{return[]}}function n(n){if(typeof window>`u`)return;let r=Array.from(new Set([...t(),n]));window.localStorage.setItem(e,JSON.stringify(r))}export{t as n,n as t};

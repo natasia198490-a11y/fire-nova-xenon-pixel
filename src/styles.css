@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #1a1410;
+  --color-wood: #241c16;
+  --color-wood-2: #2c231c;
+  --color-wood-3: #3a2e24;
+  --color-fg: #e8dcc8;
+  --color-muted: #a89880;
+  --color-subtle: #7a6c58;
+  --color-paper: #e8dcc8;
+  --color-paper-2: #dcc9a8;
+  --color-paper-3: #cbb892;
+  --color-ink: #2a2218;
+  --color-ink-soft: #4a3f32;
+  --color-accent: #7d9a8a;
+  --color-accent-fg: #13201a;
+  --color-seal: #3d2c28;
+  --color-border: color-mix(in oklab, #e8dcc8 14%, transparent);
+  --color-border-strong: color-mix(in oklab, #e8dcc8 26%, transparent);
+
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-ui: "Manrope", "Segoe UI", sans-serif;
+  --font-sans: "Manrope", "Segoe UI", sans-serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+
+  --shadow-paper:
+    0 1px 0 color-mix(in oklab, #2a2218 18%, transparent),
+    0 10px 24px color-mix(in oklab, #000 38%, transparent);
+  --shadow-paper-hover:
+    0 1px 0 color-mix(in oklab, #2a2218 22%, transparent),
+    0 18px 36px color-mix(in oklab, #000 48%, transparent);
+  --shadow-desk:
+    inset 0 0 80px color-mix(in oklab, #000 35%, transparent);
+
+  --width-desk-sm: 11.25rem;
+  --width-desk-md: 15.5rem;
+  --width-desk-lg: 19rem;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    font-family: var(--font-ui);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 40%, transparent);
+    color: var(--color-fg);
+  }
+}
+
+@layer components {
+  .desk-grain {
+    background-color: var(--color-bg);
+    background-image:
+      radial-gradient(ellipse 80% 50% at 70% 0%, color-mix(in oklab, #c4a574 12%, transparent), transparent 55%),
+      radial-gradient(ellipse 40% 30% at 12% 80%, color-mix(in oklab, #000 28%, transparent), transparent 70%),
+      repeating-linear-gradient(
+        90deg,
+        color-mix(in oklab, #1a1410 100%, transparent) 0px,
+        color-mix(in oklab, #211912 100%, transparent) 1px,
+        color-mix(in oklab, #271e16 100%, transparent) 3px,
+        color-mix(in oklab, #1c1611 100%, transparent) 6px
+      );
+  }
+
+  .paper-sheet {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    box-shadow: var(--shadow-paper);
+    background-image:
+      linear-gradient(
+        180deg,
+        color-mix(in oklab, #fff 18%, transparent),
+        transparent 28%,
+        color-mix(in oklab, #2a2218 6%, transparent)
+      );
+  }
+
+  .paper-ruled {
+    background-image:
+      repeating-linear-gradient(
+        180deg,
+        transparent 0,
+        transparent 1.55rem,
+        color-mix(in oklab, var(--color-ink) 10%, transparent) 1.55rem,
+        color-mix(in oklab, var(--color-ink) 10%, transparent) 1.6rem
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in oklab, #fff 18%, transparent),
+        transparent 28%
+      );
+  }
+
+  .map-hatch {
+    background-image:
+      radial-gradient(circle at 30% 40%, color-mix(in oklab, var(--color-ink) 10%, transparent) 0 1px, transparent 2px),
+      radial-gradient(circle at 70% 60%, color-mix(in oklab, var(--color-ink) 8%, transparent) 0 1px, transparent 2px),
+      repeating-linear-gradient(
+        45deg,
+        transparent 0 10px,
+        color-mix(in oklab, var(--color-ink) 5%, transparent) 10px 11px
+      ),
+      linear-gradient(180deg, var(--color-paper-2), var(--color-paper-3));
+  }
+
+  .stain-wine {
+    background-image:
+      radial-gradient(ellipse at 82% 12%, color-mix(in oklab, #6b3a38 28%, transparent), transparent 36%),
+      linear-gradient(
+        180deg,
+        color-mix(in oklab, #fff 18%, transparent),
+        transparent 28%
+      );
+  }
+
+  .stain-salt {
+    background-image:
+      radial-gradient(ellipse at 18% 88%, color-mix(in oklab, #fff 35%, transparent), transparent 32%),
+      linear-gradient(
+        180deg,
+        color-mix(in oklab, #fff 18%, transparent),
+        transparent 28%
+      );
+  }
+
+  .stain-ink {
+    background-image:
+      radial-gradient(ellipse at 8% 8%, color-mix(in oklab, var(--color-ink) 22%, transparent), transparent 28%),
+      linear-gradient(
+        180deg,
+        color-mix(in oklab, #fff 18%, transparent),
+        transparent 28%
+      );
+  }
+
+  .stain-grease {
+    background-image:
+      radial-gradient(ellipse at 90% 90%, color-mix(in oklab, #8a6a32 22%, transparent), transparent 34%),
+      linear-gradient(
+        180deg,
+        color-mix(in oklab, #fff 18%, transparent),
+        transparent 28%
+      );
+  }
+
+  .stain-tea {
+    background-image:
+      radial-gradient(ellipse at 50% 0%, color-mix(in oklab, #8b6914 20%, transparent), transparent 40%),
+      linear-gradient(
+        180deg,
+        color-mix(in oklab, #fff 18%, transparent),
+        transparent 28%
+      );
+  }
+
+  .wax-seal {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    background:
+      radial-gradient(circle at 35% 30%, color-mix(in oklab, var(--color-accent) 35%, #3d2c28), #3d2c28 62%);
+    box-shadow:
+      inset 0 1px 0 color-mix(in oklab, #fff 18%, transparent),
+      0 2px 4px color-mix(in oklab, #000 35%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
